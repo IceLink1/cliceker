@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name='description' content='salhiddin icelink'>
+    <meta name='keywords' content='icelink , salihiddin , mirxafizov '>
+    <meta property='og:type' content='website'>
+    <meta property='og:url' content='https://ya.ru'>
+    <meta property='og:title' content='Clicker'>
+    <meta property='og:description' content='Icelink , Clicker'>
+    <meta property='og:image' content='./assets/gem.png'>
+    <title>IceLink Clicker</title>
+  </head>
+  <body>
+    <section>
+      <div class="main">
+        <div class="left">
+          <p>Gems <br /><span class="gem-cost pink-text">0</span></p>
+          <div class="gem-img-container">
+            <img
+              src="./assets/gem.png"
+              alt=""
+              class="gem-image"
+              onclick="incrementGem(event)"
+              draggable="false"
+            />
+          </div>
+        </div>
+
+        <script id="upgrade-template" type="text/template">
+          <div class="upgrade type-{{type}}" onclick="buyUpgrade('{{name}}')" id="{{name}}-upgrade">
+            <div class="left-section">
+              <img
+                src="{{image}}"
+                alt=""
+                class="upgrade-img"
+              />
+            </div>
+            <div class="mid-section">
+              <h4>{{name}}</h4>
+              <div class="cost-info">
+                <p class="cost-text"><span class="{{name}}-cost">{{cost}}</span></p>
+                <img src="/assets/gem.png" alt="" class="gem-img" />
+              </div>
+            </div>
+            <div class="right-section">Level <span class="{{name}}-level">0</span></div>
+
+            <div class="next-level-info" id="{{name}}-next-level">
+              <p id="{{name}}-next-p">
+                +<span class="{{name}}-increase">{{increase}}</span> gems <br /> per click
+              </p>
+            </div>
+          </div>
+        </script>
+
+        <div class="right">
+          <div class="right-navbar">
+            <div id="upgrades-nav-button">Upgrade</div>
+            <div id="skills-nav-button">Skills</div>
+            <div id="artifacts-nav-button">Artifacts</div>
+          </div>
+
+          <div id="upgrades-container"></div>
+        </div>
+      </div>
+
+      <div class="statistics">
+        <div class="texts">
+          <p>GPC: <span id="gpc-text" class="pink-text">1</span></p>
+          <p>GPS: <span id="gps-text" class="pink-text">0</span></p>
+        </div>
+      </div>
+
+      <div class="util-buttons">
+        <button class="util-button prestige-button" onclick="prestige()">Prestige</button>
+        <button class="util-button" onclick="save()">Save</button>
+        <button class="util-button" onclick="load()">Load</button>
+      </div>
+
+      <div class="relic" style='margin-right: -20px;'>
+        Relic: <span id="relic">0</span>
+      </div>
+    </section>
+
+    <script type="module" src="index.js"></script>
+  </body>
+</html>
